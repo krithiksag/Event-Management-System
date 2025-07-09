@@ -1,4 +1,4 @@
-# 🎉 Event Management System
+#  Event Management System
 
 A full-featured **Flask + MySQL** web application that allows students to register for events, while admins can create, manage, and view events and participants.
 
