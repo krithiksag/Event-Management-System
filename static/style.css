@@ -1,0 +1,119 @@
+body {
+    background: url("/static/images/background.png") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+@media (max-width: 600px) {
+    .top-buttons {
+        position: static;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        gap: 8px;
+    }
+}
+
+.container {
+    background: rgba(255,255,255,0.93); /* semi-transparent white */
+    max-width: 650px;
+    margin: 24px auto 40px auto;
+    padding: 36px 32px 32px 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+
+.top-buttons {
+    position: absolute;
+    top: 140px;   /* Closer to the top */
+    right: 440px;
+    display: flex;
+    gap: 14px;
+    z-index: 1000;
+}
+
+
+form {
+    margin-bottom: 32px; /* More space below forms */
+}
+
+label {
+    display: block;
+    margin-top: 18px;  /* More space above labels */
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    margin-bottom: 18px; /* More space below fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button, .btn {
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover, .btn:focus {
+    background: #1c5d8c;
+    color: #fff;
+    text-decoration: none;
+}
+
+.error {
+    color: #e74c3c;
+    background: #fbeee0;
+    border: 1px solid #e74c3c;
+    padding: 8px 14px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 32px 0; /* More space above and below tables */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    text-align: left;
+}
+
+th {
+    background: #2980b9;
+    color: #fff;
+}
+
+.event-card {
+    background: #f0f8ff;
+    padding: 20px;
+    margin-bottom: 28px;
+    border-radius: 10px;
+    border-left: 4px solid #2980b9;
+}

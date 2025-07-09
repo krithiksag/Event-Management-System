@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Management System</h1>
+        <h2>Event Registration</h2>
+        <div class="top-buttons">
+        <a href="{{ url_for('renderAdmin') }}" class="btn">Admin Login</a>
+        <a href="{{ url_for('rendereventinfo') }}" class="btn">Events Info</a>
+        </div>
+        <form method="POST">
+            <label>First Name</label>
+            <input type="text" name="FirstName" required>
+            <label>Last Name</label>
+            <input type="text" name="LastName" required>
+            <label>Mobile Number</label>
+            <input type="text" name="MobileNumber" maxlength="10" required>
+            <label>Email-id</label>
+            <input type="email" name="Email" required>
+            <label>Branch</label>
+            <select name="Branch" required>
+                <option value="">Select Branch</option>
+                {% for branch in branchs %}
+                    <option value="{{ branch[0] }}">{{ branch[1] }}</option>
+                {% endfor %}
+            </select>
+            <label>Event</label>
+            <select name="Event" required>
+                <option value="">Select Event</option>
+                {% for event in events %}
+                    <option value="{{ event[0] }}">{{ event[1] }}</option>
+                {% endfor %}
+            </select>
+            {% for error in errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

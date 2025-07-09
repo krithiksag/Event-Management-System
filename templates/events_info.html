@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>About Events </h2>
+        <div class="top-buttons">
+        <a href="{{ url_for('renderLoginPage') }}" class="btn">Return Home</a>
+            </div>
+        {% for event in events %}
+            <div class="event-card">
+                <h3>{{ event[3] }}</h3>
+                <p>{{ event[3] }} is a flagship {{ event[7] }} event of College of Engineering Pune</p>
+                <p><strong>Venue:</strong> {{ event[8] }}</p>
+                <p><strong>Date:</strong> {{ event[6] }}</p>
+                <p><strong>Registration fee:</strong> ₹{{ event[4] }}</p>
+                <p><strong>Current Participants:</strong> {{ event[9] }}</p>
+                <p><strong>Max Participants:</strong> {{ event[5] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

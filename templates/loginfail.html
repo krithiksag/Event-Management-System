@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Failed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Event Management System</h2>
+        <divclass="top-buttons">
+        <a href="{{ url_for('renderLoginPage') }}" class="btn">Return Home</a>
+        </div>
+        <h3>Admin Login</h3>
+        {% for error in errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+        <a href="{{ url_for('renderLoginPage') }}">Try again</a>
+        <a href="{{ url_for('renderLoginPage') }}" class="btn">Return Home</a>
+
+    </div>
+</body>
+</html>

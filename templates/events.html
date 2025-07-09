@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Administrator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Event Administrator</h2>
+        <div class="top-buttons">
+        <a href="{{ url_for('renderLoginPage') }}" class="btn">Return Home</a>
+        <a href="{{ url_for('renderParticipants') }}" class="btn">Show Participants info</a>
+            </div>
+        <h3>Event Types</h3>
+        <table>
+            <tr><th>Type ID</th><th>Event Type</th><th>Total participants</th></tr>
+            {% for event in eventTypes %}
+                <tr>
+                    <td>{{ event[0] }}</td>
+                    <td>{{ event[1] }}</td>
+                    <td>{{ event[2] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <h3>Events</h3>
+        <table>
+            <tr><th>Event ID</th><th>Event</th><th>Total participants</th></tr>
+            {% for eve in events %}
+                <tr>
+                    <td>{{ eve[0] }}</td>
+                    <td>{{ eve[1] }}</td>
+                    <td>{{ eve[2] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <h4>Add new Event</h4>
+        <form method="POST">
+            <label>Event Type</label>
+            <select name="EventType">
+                {% for type in types %}
+                    <option value="{{ type[0] }}">{{ type[1] }}</option>
+                {% endfor %}
+            </select>
+            <label>Registration Fee</label>
+            <input type="number" name="Fee" required>
+            <label>Max participants</label>
+            <input type="number" name="maxP" required>
+            <label>Event Location</label>
+            <select name="EventLocation">
+                {% for location in locations %}
+                    <option value="{{ location[0] }}">{{ location[1] }}</option>
+                {% endfor %}
+            </select>
+            <label>Date (YYYY-MM-DD)</label>
+            <input type="date" name="Date" required>
+            <label>Event Name</label>
+            <input type="text" name="newEvent" required>
+            <button type="submit">Submit</button>
+        </form>
+        <h4>Delete Event</h4>
+        <form method="POST">
+            <label>Select Event to Delete</label>
+            <select name="EventId">
+                {% for event in events %}
+                    <option value="{{ event[0] }}">{{ event[1] }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Delete</button>
+        </form>
+        
+    </div>
+</body>
+</html>
